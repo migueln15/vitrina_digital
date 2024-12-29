@@ -37,7 +37,7 @@ export default function OrderSummary() {
   const subtotal = products.reduce((sum, product) => sum + (product.price * product.quantity), 0)
 
   return (
-    <div className="bg-blue-50 rounded-lg p-3 sm:p-6 sticky top-4">
+    <div className="bg-blue-50 rounded-lg p-3 sm:p-6 sticky top-24">
       <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-4">Resumen de pedido</h2>
       <p className="text-sm text-gray-600 mb-3 sm:mb-4">{products.length} Productos</p>
 

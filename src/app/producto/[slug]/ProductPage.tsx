@@ -14,8 +14,11 @@ import {
   SelectValue,
 } from "@/components/ui/Select"
 import type { ProductProps } from '@/types/product'
+import { useCart } from '@/lib/cartContext'
+import { useToast } from "@/components/ui/UseToast"
 
 export default function ProductPage({ 
+  id,
   name,
   brand,
   sku,
@@ -23,10 +26,14 @@ export default function ProductPage({
   originalPrice,
   discount,
   images,
-  description
+  description,
+  hasHomeDelivery = false,
+  hasStorePickup = true
 }: ProductProps) {
   const [quantity, setQuantity] = useState(1)
   const [currentImage, setCurrentImage] = useState(0)
+  const { addToCart } = useCart()
+  const { toast } = useToast()
 
   const incrementQuantity = () => setQuantity(q => q + 1)
   const decrementQuantity = () => setQuantity(q => Math.max(1, q - 1))
@@ -39,8 +46,16 @@ export default function ProductPage({
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
   }
 
+  const handleAddToCart = () => {
+    addToCart({ id, name, brand, sku, price, originalPrice, discount, images, description, hasHomeDelivery, hasStorePickup }, quantity)
+    toast({
+      title: "Producto agregado al carrito",
+      description: `${quantity} x ${name}`,
+    })
+  }
+
   return (
-    <div className="container mx-auto px-4 mt-14 lg:mt-28 sm:px-6 lg:px-8 py-4 max-w-7xl">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 max-w-7xl md:mt-24">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm mb-6">
         <Link href="/" className="text-gray-500 hover:text-primary">
@@ -160,7 +175,7 @@ export default function ProductPage({
                 <Plus className="h-4 w-4" />
               </Button>
             </div>
-            <Button className="flex-1 bg-primary hover:bg-primary/90 text-white">
+            <Button className="flex-1 bg-primary hover:bg-primary/90 text-white" onClick={handleAddToCart}>
               Agregar al carrito
             </Button>
             <Button variant="outline" size="icon" className="text-gray-500">
@@ -170,16 +185,18 @@ export default function ProductPage({
 
           <div className="space-y-4 mb-6">
             <div className="flex items-center gap-3 text-gray-600">
-              <Truck className="h-5 w-5 text-gray-400" />
-              <span>No disponible envío a domicilio</span>
+              <Truck className={`h-5 w-5 ${hasHomeDelivery ? 'text-primary' : 'text-gray-400'}`} />
+              <span>{hasHomeDelivery ? 'Disponible envío a domicilio' : 'No disponible envío a domicilio'}</span>
             </div>
             <div className="flex items-start gap-3">
-              <Store className="h-5 w-5 text-primary shrink-0 mt-1" />
+              <Store className={`h-5 w-5 ${hasStorePickup ? 'text-primary' : 'text-gray-400'} shrink-0 mt-1`} />
               <div>
-                <div className="text-gray-900">Disponible retiro en tienda y lockers</div>
-                <Link href="#" className="text-primary hover:underline text-sm">
-                  Consultar
-                </Link>
+                <div className="text-gray-900">{hasStorePickup ? 'Disponible retiro en tienda y lockers' : 'No disponible retiro en tienda'}</div>
+                {hasStorePickup && (
+                  <Link href="#" className="text-primary hover:underline text-sm">
+                    Consultar
+                  </Link>
+                )}
               </div>
             </div>
           </div>

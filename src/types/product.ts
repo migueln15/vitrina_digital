@@ -8,5 +8,7 @@ export interface ProductProps {
   sku: string;
   images: string[];
   description: string;
+  hasHomeDelivery?: boolean;
+  hasStorePickup?: boolean;
 }
 

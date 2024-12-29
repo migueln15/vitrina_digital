@@ -38,7 +38,7 @@ export default function OrderSummary() {
   const shipping = 0 // Free shipping
 
   return (
-    <div className="bg-blue-50 rounded-lg p-4 sm:p-6 sticky top-4">
+    <div className="bg-blue-50 rounded-lg p-4 sm:p-6 sticky top-24">
       <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Resumen de pedido</h2>
       <p className="text-gray-600 mb-4">{products.length} Productos</p>
 

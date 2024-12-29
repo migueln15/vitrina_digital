@@ -15,11 +15,14 @@ import {
   SheetTrigger,
 } from "@/components/ui/Sheet"
 import CategoryPanel from './CategoryPanel'
+import { useCart } from '@/lib/cartContext'
+import Link from 'next/link'
 import CategoryMenu from './CategoryMenu'
 
 export default function Header() {
   const [isSearchVisible, setIsSearchVisible] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const { cart } = useCart()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +32,8 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0)
 
   return (
     <header className={`bg-bgHeader text-gray-800 shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
@@ -89,10 +94,17 @@ export default function Header() {
               <User className="h-5 w-5 mr-2" />
               <span>Account</span>
             </Button>
-            <Button variant="ghost" size="sm" className="text-primary hover:bg-primary/10">
-              <ShoppingCart className="h-5 w-5 md:mr-2" />
-              <span className="hidden md:inline">Cart</span>
-            </Button>
+            <Link href="/checkout/carrito">
+              <Button variant="ghost" size="sm" className="text-primary hover:bg-primary/10 relative">
+                <ShoppingCart className="h-5 w-5 md:mr-2" />
+                <span className="hidden md:inline">Carrito</span>
+                {cartItemCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {cartItemCount}
+                  </span>
+                )}
+              </Button>
+            </Link>
             <Button variant="ghost" size="icon" className="lg:hidden text-primary" onClick={() => setIsSearchVisible(!isSearchVisible)}>
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>

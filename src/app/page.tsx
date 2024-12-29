@@ -87,7 +87,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className='md:mt-24'>
       {/* Hero Banner */}
       <HeroBanner/>
 

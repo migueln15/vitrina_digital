@@ -23,16 +23,16 @@ interface Location {
 const locations: Location[] = [
   {
     id: '1',
-    name: 'TIENDAS EFE Carabayllo',
-    address: 'Av. Túpac Amaru No. 3000 - 3002 Km 19.5, Lima, Lima, 150106, Perú',
+    name: 'Carsa Huaycan',
+    address: 'Lote 9 Zona B Av. Jose Carlos Mariategui, Ate, Lima - 150103',
     schedule: 'Lunes a Domingo 9 am a 9 pm',
     available: true,
     availabilityMessage: 'Todos tus productos están disponibles para retirar en este punto.'
   },
   {
     id: '2',
-    name: 'RETIRO REAL PLAZA SANTA CLARA',
-    address: 'Av. La Estrella 133-Módulo Compra & RecogeLima, Peru, Lima, Lima, 150103, Perú',
+    name: 'Carsa Manchay',
+    address: '36 Calle No. 36 Mz, Pachacamac, Lima - 150123',
     schedule: 'Lunes a Domingo de 11 am a 8 pm',
     available: false,
     availabilityMessage: 'Algunos de tus productos no estan disponibles para retiro.'

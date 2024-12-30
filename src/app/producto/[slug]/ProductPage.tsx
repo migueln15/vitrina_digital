@@ -201,10 +201,10 @@ export default function ProductPage({
             </div>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-6 relative">
             <h3 className="text-lg font-medium mb-2">Garantía adicional</h3>
             <Select>
-              <SelectTrigger className="w-full">
+              <SelectTrigger className="w-full ">
                 <SelectValue placeholder="Sin garantías adicionales" />
               </SelectTrigger>
               <SelectContent>

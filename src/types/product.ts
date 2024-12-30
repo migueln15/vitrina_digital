@@ -7,8 +7,17 @@ export interface ProductProps {
   discount: number;
   sku: string;
   images: string[];
+
+
   description: string;
   hasHomeDelivery?: boolean;
   hasStorePickup?: boolean;
+}
+
+export interface FilterState {
+  priceRange: [number, number]
+  brands: string[]
+  operatingSystems: string[]
+  screenSizes: string[]
 }
 

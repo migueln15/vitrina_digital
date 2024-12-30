@@ -23,7 +23,7 @@ const products: ProductProps[] = [
     originalPrice: 2799.00,
     discount: 25,
     sku: 'SAM384LT',
-    images: ['/placeholder.svg?text=Samsung1', '/placeholder.svg?text=Samsung2', '/placeholder.svg?text=Samsung3'],
+    images: ['/images/RefriSamsung384LT.png?text=Samsung1', '/placeholder.svg?text=Samsung2', '/placeholder.svg?text=Samsung3'],
     description: 'Refrigeradora Samsung con tecnología Twin Cooling Plus™ que mantiene los alimentos frescos por más tiempo.'
   },
   {
@@ -34,7 +34,7 @@ const products: ProductProps[] = [
     originalPrice: 1599.00,
     discount: 25,
     sku: 'IND5HORN',
-    images: ['/placeholder.svg?text=Indurama1', '/placeholder.svg?text=Indurama2', '/placeholder.svg?text=Indurama3'],
+    images: ['/images/CociIndu5HorCrom_1.png?text=Indurama1', '/placeholder.svg?text=Indurama2', '/placeholder.svg?text=Indurama3'],
     description: 'Cocina Indurama de 5 hornillas con encendido eléctrico y timer digital.'
   },
   {
@@ -45,7 +45,7 @@ const products: ProductProps[] = [
     originalPrice: 999.00,
     discount: 20,
     sku: 'BORD207',
-    images: ['/placeholder.svg?text=Bord1', '/placeholder.svg?text=Bord2', '/placeholder.svg?text=Bord3'],
+    images: ['/images/RefriBord207lt.png?text=Bord1', '/placeholder.svg?text=Bord2', '/placeholder.svg?text=Bord3'],
     description: 'Refrigeradora Bord con sistema No Frost y acabado plateado.'
   },
   {
@@ -56,19 +56,30 @@ const products: ProductProps[] = [
     originalPrice: 499.00,
     discount: 20,
     sku: 'BLSTBH4655053',
-    images: ['/placeholder.svg?text=Oster1', '/placeholder.svg?text=Oster2', '/placeholder.svg?text=Oster3'],
+    images: ['/images/LicOster700w_1.png?text=Oster1', '/images/LicOster700w_2.png?text=Oster2'],
     description: 'Tu nueva aliada en la cocina será la novedosa licuadora BLSTBH4655053 de 700W. Adquiere este producto Oster en EFE'
   },
   {
     id: 5,
-    brand: 'Karcher',
-    name: 'Hidrolavadora Karcher Compacta 1200W Amarillo',
-    price: 199.00,
-    originalPrice: 499.00,
-    discount: 60,
-    sku: 'KAR1200W',
-    images: ['/placeholder.svg?text=Karcher1', '/placeholder.svg?text=Karcher2', '/placeholder.svg?text=Karcher3'],
-    description: 'Hidrolavadora Karcher de alta presión, ideal para limpieza exterior.'
+    brand: 'Telstar',
+    name: 'Televisor Smart FHD Telstar 43 pulgadas TTL-TV43FEW5F3PE',
+    price: 769.00,
+    originalPrice: 1059.00,
+    discount: 30,
+    sku: '765167673152',
+    images: ['/images/TvTel43_1.png?text=Karcher1', '/placeholder.svg?text=Karcher2', '/placeholder.svg?text=Karcher3'],
+    description: 'Televisor de alta resolución y calidad para compartir esos momentos en familia'
+  },
+  {
+    id: 6,
+    brand: 'Telstar',
+    name: 'Televisor Smart FHD Telstar 43 pulgadas TTL-TV43FEW5F3PE',
+    price: 769.00,
+    originalPrice: 1059.00,
+    discount: 30,
+    sku: '765167673152',
+    images: ['/images/TvTel43_1.png?text=Karcher1', '/placeholder.svg?text=Karcher2', '/placeholder.svg?text=Karcher3'],
+    description: 'Televisor de alta resolución y calidad para compartir esos momentos en familia'
   }
 ]
 
@@ -101,11 +112,11 @@ export default function Home() {
                 align: "start",
                 loop: true,
               }}
-              className="w-full max-w-full"
+              className="w-full max-w-full relative"
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-2 -mr-2 md:-ml-4 md:-mr-4">
                 {products.map((product) => (
-                  <CarouselItem key={product.id} className="pl-2 md:pl-4 basis-1/2 md:basis-1/2 lg:basis-1/4">
+                  <CarouselItem key={product.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
                     <Card 
                       className="relative border-none shadow-lg cursor-pointer"
                       onClick={() => handleProductClick(product)}
@@ -136,6 +147,8 @@ export default function Home() {
                               <span className="text-2xl font-bold text-gray-900">
                                 S/ {product.price.toFixed(2)}
                               </span>
+                            </div>
+                            <div>
                               <span className="text-sm text-gray-500 line-through">
                                 S/ {product.originalPrice.toFixed(2)}
                               </span>
@@ -150,8 +163,8 @@ export default function Home() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
-              <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
+              <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-10" />
+              <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-10" />
             </Carousel>
           </div>
         </section>

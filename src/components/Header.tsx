@@ -13,6 +13,7 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
+  SheetTitle,
 } from "@/components/ui/Sheet"
 import CategoryPanel from './CategoryPanel'
 import { useCart } from '@/lib/cartContext'
@@ -48,17 +49,19 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+              <SheetTitle className="text-lg font-semibold mb-2">Categorías</SheetTitle>
               <nav className="flex flex-col gap-4">
-                <h2 className="text-lg font-semibold mb-2">Categories</h2>
-                <CategoryPanel />
+                <CategoryPanel/>
               </nav>
             </SheetContent>
           </Sheet>
 
           {/* Logo */}
-          <div className="text-2xl font-bold text-primary">
-            electro
-          </div>
+          <Link href={'/'}>
+            <div className="text-2xl font-bold text-primary">
+              electro
+            </div>
+          </Link>
 
           {/* Categories and Search (Desktop) */}
           <div className="hidden lg:flex flex-1 max-w-3xl mx-8">
@@ -69,7 +72,7 @@ export default function Header() {
                   <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-64">
+              <DropdownMenuContent className="w-56 bg-white overflow-auto max-h-[80vh]">
                 <CategoryPanel />
               </DropdownMenuContent>
             </DropdownMenu>

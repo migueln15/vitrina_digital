@@ -2,17 +2,12 @@ import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 
 const categories = [
-  { name: 'Value of the Day', href: '/value-of-day' },
-  { name: 'Top 100 Offers', href: '/top-offers' },
-  { name: 'New Arrivals', href: '/new-arrivals' },
-  { name: 'Computers & Accessories', href: '/computers' },
-  { name: 'Cameras, Audio & Video', href: '/cameras' },
-  { name: 'Mobiles & Tablets', href: '/mobiles' },
-  { name: 'Movies, Music & Video Games', href: '/entertainment' },
-  { name: 'TV & Audio', href: '/tv-audio' },
-  { name: 'Watches & Eyewear', href: '/watches' },
-  { name: 'Car, Motorbike & Industrial', href: '/automotive' },
-  { name: 'Accessories', href: '/accessories' },
+  { name: 'Tecnología', href: '/tecnologia' },
+  { name: 'Electrohogar', href: '/electrohogar' },
+  { name: 'Dormitorio', href: '/dormitorio' },
+  { name: 'Zona Gamer', href: '/zona-gamer' },
+  { name: 'Motos', href: '/motos' },
+  { name: 'Negocios', href: '/negocios' }
 ]
 
 export default function CategoryPanel() {

@@ -9,8 +9,10 @@ const products: ProductProps[] = [
     originalPrice: 2799.00,
     discount: 25,
     sku: 'SAM384LT',
-    images: ['/placeholder.svg?text=Samsung1', '/placeholder.svg?text=Samsung2', '/placeholder.svg?text=Samsung3'],
-    description: 'Refrigeradora Samsung con tecnología Twin Cooling Plus™ que mantiene los alimentos frescos por más tiempo.'
+    images: ['/images/RefriSamsung384LT.png?text=Samsung1', '/images/RefriSamsung384LT_2.png?text=Samsung2', '/images/RefriSamsung384LT_3.png?text=Samsung3'],
+    description: 'Refrigeradora Samsung con tecnología Twin Cooling Plus™ que mantiene los alimentos frescos por más tiempo.',
+    hasHomeDelivery: true,
+    hasStorePickup: true
   },
   {
     id: 2,
@@ -20,8 +22,10 @@ const products: ProductProps[] = [
     originalPrice: 1599.00,
     discount: 25,
     sku: 'IND5HORN',
-    images: ['/placeholder.svg?text=Indurama1', '/placeholder.svg?text=Indurama2', '/placeholder.svg?text=Indurama3'],
-    description: 'Cocina Indurama de 5 hornillas con encendido eléctrico y timer digital.'
+    images: ['/images/CociIndu5HorCrom_1.png?text=Indurama1', '/images/CociIndu5HorCrom_2.png?text=Indurama2', '/images/CociIndu5HorCrom_3.png?text=Indurama3', '/images/CociIndu5HorCrom_4.png?text=Indurama4', '/images/CociIndu5HorCrom_5.png?text=Indurama5'],
+    description: 'Cocina Indurama de 5 hornillas con encendido eléctrico y timer digital.',
+    hasHomeDelivery: true,
+    hasStorePickup: false
   },
   {
     id: 3,
@@ -31,8 +35,10 @@ const products: ProductProps[] = [
     originalPrice: 999.00,
     discount: 20,
     sku: 'BORD207',
-    images: ['/placeholder.svg?text=Bord1', '/placeholder.svg?text=Bord2', '/placeholder.svg?text=Bord3'],
-    description: 'Refrigeradora Bord con sistema No Frost y acabado plateado.'
+    images: ['/images/RefriBord207lt.png?text=Bord1', '/images/RefriBord207lt_2.png?text=Bord2', '/images/RefriBord207lt_3.png?text=Bord3'],
+    description: 'Refrigeradora Bord con sistema No Frost y acabado plateado.',
+    hasHomeDelivery: false,
+    hasStorePickup: true
   },
   {
     id: 4,
@@ -42,19 +48,23 @@ const products: ProductProps[] = [
     originalPrice: 499.00,
     discount: 20,
     sku: 'BLSTBH4655053',
-    images: ['/placeholder.svg?text=Oster1', '/placeholder.svg?text=Oster2', '/placeholder.svg?text=Oster3'],
-    description: 'Tu nueva aliada en la cocina será la novedosa licuadora BLSTBH4655053 de 700W. Adquiere este producto Oster en EFE'
+    images: ['/images/LicOster700w_1.png?text=Oster1', '/images/LicOster700w_2.png?text=Oster2'],
+    description: 'Tu nueva aliada en la cocina será la novedosa licuadora BLSTBH4655053 de 700W. Adquiere este producto Oster',
+    hasHomeDelivery: true,
+    hasStorePickup: true
   },
   {
     id: 5,
-    brand: 'Karcher',
-    name: 'Hidrolavadora Karcher Compacta 1200W Amarillo',
-    price: 199.00,
-    originalPrice: 499.00,
-    discount: 60,
-    sku: 'KAR1200W',
-    images: ['/placeholder.svg?text=Karcher1', '/placeholder.svg?text=Karcher2', '/placeholder.svg?text=Karcher3'],
-    description: 'Hidrolavadora Karcher de alta presión, ideal para limpieza exterior.'
+    brand: 'Telstar',
+    name: 'Televisor Smart FHD Telstar 43 pulgadas TTL-TV43FEW5F3PE',
+    price: 769.00,
+    originalPrice: 1059.00,
+    discount: 30,
+    sku: '765167673152',
+    images: ['/images/TvTel43_1.png?text=Karcher1', '/images/TvTel43_2.png?text=Karcher2', '/images/TvTel43_3.png?text=Karcher3', '/images/TvTel43_4.png?text=Karcher4'],
+    description: 'Hidrolavadora Karcher de alta presión, ideal para limpieza exterior.',
+    hasHomeDelivery: true,
+    hasStorePickup: false
   }
 ]
 

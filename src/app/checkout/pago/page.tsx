@@ -233,7 +233,7 @@ export default function PaymentPage() {
                 </label>
               </div>
 
-              <Button type="submit" className="w-full" size="lg">
+              <Button type="submit" className="w-full text-white" size="lg">
                 Confirmar
               </Button>
             </form>
@@ -301,9 +301,10 @@ export default function PaymentPage() {
                   </div>
                   {paymentMethod === 'card' && (
                     <div className="mt-4 flex gap-2">
-                      <Image src="/placeholder.svg" alt="Visa" width={40} height={25} className="object-contain" />
-                      <Image src="/placeholder.svg" alt="Mastercard" width={40} height={25} className="object-contain" />
-                      <Image src="/placeholder.svg" alt="American Express" width={40} height={25} className="object-contain" />
+                      <Image src="/images/ico_visa-logo.webp" alt="Visa" width={55} height={35} className="object-contain" />
+                      <Image src="/images/ico_master-logo.webp" alt="Mastercard" width={55} height={35} className="object-contain" />
+                      <Image src="/images/ico_american-logo.webp" alt="American Express" width={55} height={35} className="object-contain" />
+                      <Image src="/images/ico_diners-logo.webp" alt="Diners" width={55} height={35} className="object-contain" />
                     </div>
                   )}
                 </div>
@@ -312,7 +313,7 @@ export default function PaymentPage() {
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="efectiva" id="efectiva" />
                     <Label htmlFor="efectiva" className="flex items-center gap-3">
-                      <span>Compra en cuotas sin tarjeta con Crédito Efectiva</span>
+                      <span>Compra en cuotas sin tarjeta con Credialtoque</span>
                     </Label>
                   </div>
                   {paymentMethod === 'efectiva' && (
@@ -361,7 +362,7 @@ export default function PaymentPage() {
                 </div>
               </RadioGroup>
 
-              <Button className="w-full mt-4 sm:mt-6" size="lg">
+              <Button className="w-full mt-4 sm:mt-6 text-white" size="lg">
                 Pagar
               </Button>
             </div>

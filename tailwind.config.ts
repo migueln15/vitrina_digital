@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animatePlugin from "tailwindcss-animate"
 
 export default {
   content: [
@@ -11,10 +12,11 @@ export default {
       colors: {
         primary: '#1F5DBF',
         bgHeader: '#FFFFFF',
+        accent: "#E5E7EB",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
     },
   },
-  plugins: [],
+  plugins: [animatePlugin],
 } satisfies Config;

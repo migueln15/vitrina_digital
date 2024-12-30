@@ -4,19 +4,19 @@ import ProductPage from './ProductPage'
 import { getProduct } from '@/lib/getProduct'
 
 interface PageProps {
-  params: { slug: string };
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
 export default async function Page({ searchParams }: PageProps) {
   const resolvedSearchParams = await searchParams;
+
   const id = resolvedSearchParams.id;
-  
+
   if (!id || Array.isArray(id)) {
     notFound();
   }
 
-  const productId = parseInt(id);
+  const productId = parseInt(id, 10);
 
   if (isNaN(productId)) {
     notFound();

@@ -143,7 +143,7 @@ export default function CartPage() {
                 </div>
 
                 <Link href="/checkout/entrega">
-                  <Button className="w-full mt-6" size="lg">
+                  <Button className="w-full mt-6 text-white" size="lg">
                     Siguiente
                   </Button>
                 </Link>

@@ -118,7 +118,7 @@ export default function StoreLocations() {
                 <Button variant="outline" size="sm" className="text-xs sm:text-sm px-2 sm:px-4">
                   Ver fechas
                 </Button>
-                <Button size="sm" className="text-xs sm:text-sm px-2 sm:px-4">
+                <Button size="sm" className="text-xs sm:text-sm px-2 sm:px-4 text-white">
                   Seleccionar
                 </Button>
               </div>
